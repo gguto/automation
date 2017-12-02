@@ -14,7 +14,7 @@ Quando("clico no botão entrar") do
 end
 
 Então("logo no sistema com sucesso") do
-    expect(page).to have_link("Minha conta")
+    expect(login_page).to have_link("Minha conta")
 end
 
 Quando("preencho com dados de login incorretos") do
@@ -23,5 +23,6 @@ Quando("preencho com dados de login incorretos") do
 end
 
 Então("o sistema me apresenta uma mensagem de erro na autenticação") do
-  puts 'oi'
+expect(login_page).to have_content('Desculpe, o nome de usuário ou a senha não foram reconhecidos.')
+
 end
